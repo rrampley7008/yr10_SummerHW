@@ -1,32 +1,102 @@
-#Python <img src="../../Resources/python.png" width=50px alt="Python">
+pygame
 
-##Creating simple graphics using pygame
-For this task you will either need to use your raspberry pi or a windows machine with python and the correct version of pygame installed. Your Raspberry Pi would be easier!
 
-##Grading
-|Grade|What must I do?|
-|-----|---------------|
-|D|I will be able to copy the example given in the tutorial and add some commenting|
-|C|I will be able to use the example given in the tutorial to create my own sprites and use clear commenting|
-|B|I will be able to animate my own sprites using fully annotated code|
-|A/A*|I will be able to apply use my new found graphical super powers to ~~conquer the world~~ create a simple animation or game.|
+import pygame, sys
 
-##The task
-What [this](https://www.youtube.com/watch?v=b84EywkQ3HI) video from Geek Gurl Diaries. (Might not be accessible from within school)
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/b84EywkQ3HI" frameborder="0" allowfullscreen></iframe>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=b84EywkQ3HI
-" target="_blank"><img src="http://img.youtube.com/vi/b84EywkQ3HI/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
-##Steps
-1. Create a simple space invader like the one shown in the video.
-2. Comment your code to explain what each line does. (as best you can)
-3. Paste you code into [sprite.py](sprite.py) and commit.
-3. Try to animate your sprite as the end of video suggests.
-4. Paste you code into [sprite.py](sprite.py) and commit.
-4. Make a bigger canvas and a bigger sprite of your own design.
-5. Paste you code into [sprite.py](sprite.py) and commit.
-6. Go forth and do something cool!
-7. Paste you code into [sprite.py](sprite.py) and commit.
+pygame.init()
+
+
+
+
+screen = pygame.display.set_mode([225, 150])
+
+r = pygame.Color("red")
+
+w = pygame.Color("white")
+
+b = py.game.Color("black")
+
+data = [
+
+    [ w, w, w, w, w, w, b, b, b, b, w, w, w, w ],
+
+    [ w, w, w, w, b, b, r, r, r, r, b, w, w, w ],
+
+    [ w, w, w, b, r, r, r, r, r, r, r, b, w, w, w ],
+
+    [ w, w, b, r, r, r, b, b, b, b, b, b, b, w ],
+
+    [ w, b, r, r, r, b, b, b, b, b, b, b, b, b ],
+
+    [ w, b, r, r, b, b, w, w, w, w, b, b, b, w ],
+
+    [ b, b, b, b, b, w, w, w, b, w, b, w, w, w ],
+
+    [ b, w, w, b, b, w, w, w, b, w, b, b, b, w ],
+
+    [ b, w, w, b, b, b, w, w, w, w, w, w, w, b ],
+
+    [ b, w, w, w, b, w, w, b, w, w, w, w, w, b ],
+
+    [ w, b, w, w, w, w, b, b, b, w, w, w, b, w ],
+
+    [ w, w, b, b, w, w, w, w, b, b, b, b, w, w ],
+
+    [ w, b, b, b, b, w, w, w, w, w, b, w, w, w ],
+
+    [ w, b, r, r, b, b, b, b, b, b, b, w, w, w, w ],
+
+    [ b, r, r, r, r, b, b, w, w, w, b, w, w, w ],
+
+    [ b, r, r, r, r, b, w, w, w, w, w, b, w, w ],
+
+    [ b, r, r, r, r, b, w, w, w, w, w, b, w, w ],
+
+    [ b, b, r, r, r, r, b, w, w, w, b, b, b, w ],
+
+    [ b, b, b, r, r, r, b, b, b, b, b, w, b, w ],
+
+    [ w, b, b, b, b, b, b, w, w, b, b, w, b, w, ],
+
+    [ w, b, b, b, b, b, b, b, b, b, b, b, w, w ],
+
+    [ w, b, b, b, b, b, b, b, b, b, b, b, w, w ],
+
+    [ w, w, b, b, b, b, b, b, b, b, b, w, w, w ],
+
+    [ w, w, b, r, r, r, r, r, b, w, w, w, w, w ],
+
+    [ w, w, b, r, r, r, r, r, r, b, w, w, w, w ],
+
+    [ w, w, b, b, b, b, b, b, b, b, w, w, w, w ],
+
+    ]
+
+    
+
+for y, row in enumerate(data):
+
+    for x, colour in enumerate(row):
+
+        rect = pygame.Rect(x*25, y*25, 25, 25)
+
+        screen.fill(colour, rect = rect)
+
+
+
+
+pygame.display.update()
+
+
+
+
+while True:
+
+    for event in pygame.event.get():
+
+        if event.type == pygame.QUIT:
+
+            sys.exit()
